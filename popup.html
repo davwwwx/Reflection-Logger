@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Reflected parameters</title>
+  <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 400px;
+    }
+
+    td,
+    th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- <h1>Request Log</h1> -->
+  <div id="request-list">
+    <table id="request-paths">
+      <tr>
+        <th>Reflected request paths</th>
+      </tr>
+    </table>
+    <br>
+    <br>
+    <table id="request-params">
+      <tr>
+        <th>Reflected query string param names</th>
+      </tr>
+    </table>
+    <br>
+    <br>
+    <table id="request-values">
+      <tr>
+        <th>Reflected query string values</th>
+      </tr>
+    </table>
+  </div>
+  <script src="popup.js"></script>
+</body>
+
+</html>

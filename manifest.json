@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Reflection Logger",
+  "version": "3.0",
+  "description": "Logs request URIs with reflection in a popup UI",
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "webRequest",
+    "storage",
+    "declarativeNetRequest",
+    "declarativeNetRequestFeedback"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon":"favicon.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
