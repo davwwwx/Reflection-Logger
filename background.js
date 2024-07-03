@@ -34,9 +34,7 @@ function refreshCount() {
 }
 
 chrome.tabs.onUpdated.addListener(async function (tabId, props) {
-  console.log(props);
   const [tab] = await chrome.tabs.query({active: true});
-  console.log(tab?.[0]?.url);
   const url = tab?.[0]?.url || tab?.url;
   current_url = url || "";
   if (props.status == "complete") {
