@@ -10,6 +10,12 @@ var current_url = "";
 var selectedId = -1;
 var samesite = true;
 
+(async function(){
+  const [tab] = await chrome.tabs.query({active: true});
+  const url = tab?.[0]?.url || tab?.url;
+  current_url = url || "";
+})();
+
 function refreshCount() {
   const match = matched[selectedId];
   txt = match ? match.path.length + match.param.length + match.value.length : 0;
@@ -27,9 +33,12 @@ function refreshCount() {
   });
 }
 
-chrome.tabs.onUpdated.addListener(function (tabId, props) {
+chrome.tabs.onUpdated.addListener(async function (tabId, props) {
   console.log(props);
-  if (props.url) current_url = props.url;
+  const [tab] = await chrome.tabs.query({active: true});
+  console.log(tab?.[0]?.url);
+  const url = tab?.[0]?.url || tab?.url;
+  current_url = url || "";
   if (props.status == "complete") {
     if (tabId == selectedId) refreshCount();
   } else if (props.status) {
