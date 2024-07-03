@@ -1,1 +1,14 @@
-[]
+[{
+    "id": "my_rule_list",
+    "enabled": true,
+    "rules": [
+      {
+        "action": {
+          "type": "block"
+        },
+        "condition": {
+          "urlFilter": ".*"
+        }
+      }
+    ]
+}]
